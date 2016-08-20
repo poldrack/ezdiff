@@ -17,7 +17,11 @@ dependencies:
         - conda install --yes r r-essentials numpy pandas 
         - $HOME/miniconda/bin/pip install rpy2
         - $HOME/miniconda/bin/pip install pytest
-
+        - sudo apt-get install libgsl0ldbl gsl-bin libgsl0-dev
+        - echo "install.packages('rtdists', repos='http://cran.us.r-project.org')" | R --vanilla        
+    cache_directories:
+        - "$HOME/miniconda"
 test:
     override:
         - py.test
+
