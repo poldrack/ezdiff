@@ -1,8 +1,8 @@
 machine:
-    python:
-        version: 3.5.2
-    pre:
-        - if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.2' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.2; popd; fi
+    #python:
+    #    version: 3.5.2
+    #pre:
+    #    - if [ ! -e '/home/ubuntu/virtualenvs/venv-3.5.2' ]; then mkdir -p '/home/ubuntu/virtualenvs'; pushd '/home/ubuntu/virtualenvs'; virtualenv venv-3.5.2; popd; fi
     post:
         - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
         - bash ~/miniconda.sh -b -p $HOME/miniconda
@@ -14,7 +14,7 @@ dependencies:
         - conda update conda
         - conda install --yes anaconda-client anaconda-build conda-build
         - conda config --add channels r
-        - conda install --yes r r-essentials
+        - conda install --yes r r-essentials numpy pandas 
         - $HOME/miniconda/bin/pip install rpy2
         - $HOME/miniconda/bin/pip install pytest
 
