@@ -4,8 +4,8 @@ import numpy
 def ezdiff(rt,correct,s=1.0):
     logit = lambda p:numpy.log(p/(1-p))
 
-    assert numpy.max(correct)==1
-    assert numpy.min(correct)==0
+    assert numpy.max(correct)<=1
+    assert numpy.min(correct)>=0
     pc=numpy.mean(correct)
     # subtract or add 1/2 an error to prevent division by zero
     if pc==1.0:
