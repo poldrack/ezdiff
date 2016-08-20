@@ -9,4 +9,4 @@ machine:
 
 dependencies:
     pre:
-        sudo apt-get -y install r-base
+        - sudo apt-get -y install r-base
