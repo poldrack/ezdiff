@@ -8,6 +8,9 @@ import pandas
 from rpy2.robjects.packages import importr
 import rpy2.robjects as robjects
 
+utils = importr('utils')
+if not 'rtdists' in utils.installed_packages():
+    utils.install_packages('rtdists')
 rtdists = importr('rtdists')
 
 def simulate_ddm(v=1,a=1,t0=0.3,z=0.5,ntrials=500):
