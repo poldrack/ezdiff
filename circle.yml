@@ -14,4 +14,4 @@ dependencies:
         - conda update conda
         - conda install --yes anaconda-client anaconda-build conda-build
         - conda config --add channels r
-        - conda install --yes r r-essential
+        - conda install --yes r r-essentials
