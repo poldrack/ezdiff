@@ -15,3 +15,4 @@ dependencies:
         - conda install --yes anaconda-client anaconda-build conda-build
         - conda config --add channels r
         - conda install --yes r r-essentials
+        - $HOME/miniconda/bin/pip install rpy2
