@@ -18,6 +18,9 @@ dependencies:
         - $HOME/miniconda/bin/pip install rpy2
         - $HOME/miniconda/bin/pip install pytest
         - sudo apt-get install libgsl0ldbl gsl-bin libgsl0-dev
+        - echo "install.packages('evd',repos='http://cran.us.r-project.org')" | R --vanil
+        - echo "install.packages('msm',repos='http://cran.us.r-project.org')" | R --vanil
+        - echo "install.packages('gsl',repos='http://cran.us.r-project.org')" | R --vanil
         - wget https://cran.r-project.org/src/contrib/Archive/rtdists/rtdists_0.5-2.tar.gz
         - echo "install.packages('rtdists_0.5-2.tar.gz',repos=NULL, type='source')" | R --vanilla        
     cache_directories:
