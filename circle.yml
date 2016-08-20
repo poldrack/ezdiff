@@ -12,6 +12,6 @@ machine:
 dependencies:
     override:
         - conda update conda
-        - conda install anaconda-client anaconda-build conda-build
+        - conda install --yes anaconda-client anaconda-build conda-build
         - conda config --add channels r
-        - conda install r r-essential
+        - conda install --yes r r-essential
