@@ -14,10 +14,16 @@ rtdists = importr('rtdists')
 def simulate_ddm(v=1,a=1,t0=0.3,z=0.5,ntrials=1000):
     """
     simulate data from drift diffusion model
+    v = drift rate
+    a = boundary separation
+    t0 = non-decision time
     """
-
+    assert ntrials > 0
+    assert a > 0
+    assert t0 > 0
+    
     rtsim = numpy.array(robjects.r('rdiffusion(%d,a=%f,z=%f,v=%f,t0=%f)'%(ntrials,a,z,v,t0)))
-    rtsim[1,:]=rtsim[1,:]-1
+    rtsim[1,:]=rtsim[1,:]-1  # simulation returns 1/2 for response, change it to 0/1
     rtdf=pandas.DataFrame(rtsim.T,columns=['rt','response'])
     rtdf['v']=v
     rtdf['a']=a

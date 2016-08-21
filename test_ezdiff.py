@@ -5,12 +5,9 @@ test ezdiff
 
 
 import glob
-import rpy2
-from rpy2.robjects.packages import importr
-import rpy2.robjects as robjects
 import numpy
 import pandas
-from simulate_ddm import simulate_ddm,mk_simulated_data
+from simulate_ddm import mk_simulated_data
 from ezdiff import ezdiff
 
 
